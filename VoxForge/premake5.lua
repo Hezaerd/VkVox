@@ -21,3 +21,5 @@ project "VoxForge"
         defines { "VF_DEBUG", "_DEBUG", } 
 
     filter "configurations:Release"
+        optimize "On"
+        defines { "VF_RELEASE", "NDEBUG", }
