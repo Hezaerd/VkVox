@@ -1,0 +1,3 @@
+[submodule "VoxForge/vendor/GLFW"]
+	path = VoxForge/vendor/GLFW
+	url = https://github.com/Hezaerd/glfw.git

@@ -5,7 +5,10 @@ include "./Scripts/Premake/Utils/FirstToUpper.lua"
 
 -- Dependencies table
 Dependencies = {
-
+    GLFW = {
+        LibName = "glfw3",
+        IncludeDir = "%{wks.location}/VoxForge/vendor/GLFW/include",
+    },
 }
 
 
