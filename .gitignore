@@ -1,0 +1,22 @@
+# VoxForge binaries
+build/
+**/bin/
+bin-int/
+Intermediates/
+
+
+# keep premake5 binaries
+!Vendor/premake/bin
+
+
+# IDEs caches
+.idea/
+.vs/
+.vscode/
+
+
+# Visual Studio files
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user
