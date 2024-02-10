@@ -32,8 +32,8 @@ workspace "VoxForge"
         optimize "On"
         symbols "Default"
 
-    filter "system:windows"
-        buildoptions { "/EHsc", "/Zc:preprocessor", "/Zc:__cplusplus" }
+    -- filter "system:windows"
+    --     buildoptions { "/EHsc", "/Zc:preprocessor", "/Zc:__cplusplus" }
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
@@ -43,4 +43,8 @@ group ""
 
 group "Studio"
     include "VoxForge-Studio"
+group ""
+
+group "Dependencies"
+    include "VoxForge/vendor/GLFW"
 group ""
