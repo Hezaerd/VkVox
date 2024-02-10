@@ -9,6 +9,10 @@ Intermediates/
 !Vendor/premake/bin
 
 
+# keep project building scripts
+!Scripts/build
+
+
 # IDEs caches
 .idea/
 .vs/
