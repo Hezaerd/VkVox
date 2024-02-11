@@ -1,7 +1,16 @@
-#include <cstdio>
+#include <VoxForge.hpp>
 
 int main()
 {
-	printf("Entry point!");
+	VoxForge::Log::Init();
+	
+	VS_INFO("Entry Point!");
+
+	while (true)
+	{
+		
+	}
+
+	VoxForge::Log::Shutdown();
 }
 
