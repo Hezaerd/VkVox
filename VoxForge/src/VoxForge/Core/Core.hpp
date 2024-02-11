@@ -2,6 +2,8 @@
 
 #include <memory>
 
+#define VF_DEBUGBREAK() __debugbreak()
+
 #define VOX_BUILD_ID "v.0.0.1"
 
 namespace VoxForge
@@ -26,3 +28,4 @@ namespace VoxForge
 }
 
 #include "VoxForge/Core/Debug/Log.hpp"
+#include "VoxForge/Core/Debug/Assert.hpp"

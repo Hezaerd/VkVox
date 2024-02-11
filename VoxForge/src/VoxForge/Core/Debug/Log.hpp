@@ -39,7 +39,10 @@ namespace VoxForge
 		static std::map<std::string, TagDetail>& GetEnabledTags() { return s_EnabledTags; }
 
 		template<typename... Args>
-		static void PrintMessage(Log::Type pType, Log::Level pLevel, std::string_view pTag, Args&&... pArgs);
+		static void PrintMessage(Type pType, Level pLevel, std::string_view pTag, Args&&... pArgs);
+
+		template<typename... Args>
+		static void PrintAssertMessage(Type pType, std::string_view pPrefix, Args&&... pArgs);
 
 	public:
 		static const char* LevelToString(const Level pLevel)
@@ -114,12 +117,12 @@ namespace VoxForge
 namespace VoxForge
 {
 	template<typename... Args>
-	void Log::PrintMessage(Log::Type pType, Log::Level pLevel, std::string_view pTag, Args&&... pArgs)
+	void Log::PrintMessage(const Type pType, Level pLevel, std::string_view pTag, Args&&... pArgs)
 	{
-		auto detail = s_EnabledTags[std::string(pTag)];
-		if (detail.Enabled && detail.LevelFilter <= pLevel)
+		const auto [Enabled, LevelFilter] = s_EnabledTags[std::string(pTag)];
+		if (Enabled && LevelFilter <= pLevel)
 		{
-			auto& logger = (pType == Type::Forge) ? GetForgeLogger() : GetStudioLogger();
+			const auto& logger = (pType == Type::Forge) ? GetForgeLogger() : GetStudioLogger();
 			std::string logString = pTag.empty() ? "{0}{1}" : "[{0}] {1}";
 			switch(pLevel)
 			{
@@ -140,6 +143,20 @@ namespace VoxForge
 				break;
 			}
 		}
+	}
+
+	template<typename... Args>
+	void Log::PrintAssertMessage(const Type pType, std::string_view pPrefix, Args&&... pArgs)
+	{
+		const auto& logger = (pType == Type::Forge) ? GetForgeLogger() : GetStudioLogger();
+		logger->critical("{0}: {1}", pPrefix, fmt::format(std::forward<Args>(pArgs)...));
+	}
+
+	template<>
+	inline void Log::PrintAssertMessage(const Type pType, std::string_view pPrefix)
+	{
+		const auto& logger = (pType == Type::Forge) ? GetForgeLogger() : GetStudioLogger();
+		logger->critical("{0}", pPrefix);
 	}
 
 }
