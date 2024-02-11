@@ -1,4 +1,4 @@
-project "VoxForge-Studio"
+project "VoxStudio"
     kind "ConsoleApp"
 
     targetdir ("%{wks.location}/build/bin/" .. outputdir .. "/%{prj.name}")

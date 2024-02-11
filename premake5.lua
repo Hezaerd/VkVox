@@ -42,7 +42,7 @@ group "Forge"
 group ""
 
 group "Studio"
-    include "VoxForge-Studio"
+    include "VoxStudio"
 group ""
 
 group "Dependencies"
