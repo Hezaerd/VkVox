@@ -1,3 +1,10 @@
+## What is this ?
+
+VoxForge is a voxel game engine. 
+It is a project that aims to create a game engine that can be used to create a voxel game.
+The engine is written in C++ and uses Vulkan for rendering.
+The engine is designed with modern C++ in mind and uses the latest C++ features.
+
 ## Project structure 
 
 ### Forge - Engine
@@ -7,7 +14,6 @@ The [`VoxForge`](VoxForge) directory contains the engine code. The engine is a l
 ### Studio - Editor
 
 The [`VoxStudio`](VoxStudio) directory contains the editor code. The editor is a tool that use the engine to create a game. It is a user interface that allows the user to create and modify every part of the game. The editor is written in C++ and uses the engine library.
-
 
 
 ## Commit message convention
