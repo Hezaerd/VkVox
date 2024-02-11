@@ -11,7 +11,7 @@ workspace "VoxForge"
     cppdialect "C++20"
     staticruntime "Off"
 
-    solution_items { ".editorconfig" }    
+    solution_items { ".editorconfig", "README.md" }    
 
     flags { "MultiProcessorCompile" }
     
