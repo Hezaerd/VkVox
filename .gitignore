@@ -24,3 +24,7 @@ Intermediates/
 **.vcxproj
 **.vcxproj.filters
 **.vcxproj.user
+
+
+# Vox Forge/Studio logs
+*.log
