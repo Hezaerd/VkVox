@@ -1,10 +1,5 @@
 #include <VoxForge.hpp>
 
-bool CrashingFunction()
-{
-	return false;
-}
-
 int main()
 {
 	VoxForge::Log::Init();
@@ -13,13 +8,19 @@ int main()
 
 	// Test variables in log
 	int a = 5;
-	VF_INFO("Hello! Var={0}", a);
+	VS_INFO("Hello! Var={0}", a);
 
 	// test asserts - should not break
-	VF_ASSERT(true, "This should not break!")
+	VS_ASSERT(true, "This should not break!")
+
+	// test verify - should not break
+	VS_VERIFY((true == true), "This should not break!")
 	
 	// test asserts - should break
-	VF_ASSERT(CrashingFunction(), "Crashing function failed!")
+	VS_ASSERT(false, "This should break!")
+
+	// test verify - should break
+	VS_VERIFY((true == false), "This should break!")
 
 	while (true)
 	{

@@ -29,3 +29,4 @@ namespace VoxForge
 
 #include "VoxForge/Core/Debug/Log.hpp"
 #include "VoxForge/Core/Debug/Assert.hpp"
+#include "VoxForge/Core/Debug/Verify.hpp"
