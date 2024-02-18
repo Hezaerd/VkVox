@@ -6,25 +6,17 @@ int main()
 	
 	VS_INFO("Entry Point!");
 
-	// Test variables in log
-	int a = 5;
-	VS_INFO("Hello! Var={0}", a);
+	VoxForge::WindowSpecification windowSpecs;
+	windowSpecs.Title = "VoxStudio";
+	windowSpecs.Width = 1280;
+	windowSpecs.Height = 720;
 
-	// test asserts - should not break
-	VS_ASSERT(true, "This should not break!")
-
-	// test verify - should not break
-	VS_VERIFY((true == true), "This should not break!")
-	
-	// test asserts - should break
-	VS_ASSERT(false, "This should break!")
-
-	// test verify - should break
-	VS_VERIFY((true == false), "This should break!")
+	const auto window = VoxForge::Window::Create(windowSpecs);
+	window->Init();
+	window->CenterWindow();
 
 	while (true)
 	{
-		
 	}
 
 	VoxForge::Log::Shutdown();
