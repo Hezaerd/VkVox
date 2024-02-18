@@ -35,9 +35,6 @@ namespace VoxForge
 		Window& GetWindow() const { return *m_Window; }
 
 		float GetTime();
-
-	public:
-		static Application* CreateApplication(const ApplicationSpecification& pSpec);
 	
 	private:
 		void ProcessEvents();
@@ -47,9 +44,11 @@ namespace VoxForge
 		Scope<Window> m_Window;
 
 		bool m_Running = true;
-		bool m_Minimized = false;
 
 	private:
 		static Application* s_Instance;
 	};
+
+	// To be defined in the CLIENT
+	Application* CreateApplication(int argc, char** argv);
 }

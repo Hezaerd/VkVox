@@ -4,7 +4,11 @@
 
 #define VF_DEBUGBREAK() __debugbreak()
 
-#define VOX_BUILD_ID "v.0.0.1"
+namespace VoxForge
+{
+	void InitCore();
+	void ShutdownCore();
+}
 
 namespace VoxForge
 {

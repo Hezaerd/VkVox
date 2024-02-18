@@ -7,3 +7,4 @@
 
 #include "VoxForge/Core/Core.hpp"
 #include "VoxForge/Core/Application.hpp"
+#include "VoxForge/Core/EntryPoint.hpp"

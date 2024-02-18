@@ -2,7 +2,7 @@
 #include "Application.hpp"
 
 // apllication running flag
-bool g_ApplicationRunning = true;
+extern bool g_ApplicationRunning; // NOTE: this is defined in EntryPoint.hpp
 
 namespace VoxForge
 {
@@ -32,12 +32,7 @@ namespace VoxForge
 	Application::~Application()
 	{
 	}
-
-	Application* Application::CreateApplication(const ApplicationSpecification& pSpec)
-	{
-		return new Application(pSpec);
-	}
-
+	
 	void Application::Run()
 	{
 		OnInit();

@@ -1,19 +1,23 @@
 #include <VoxForge.hpp>
 
-int main()
+class VoxStudio : public VoxForge::Application
 {
-	VoxForge::Log::Init();
-	
-	VS_INFO("Entry Point!");
+public:
+	VoxStudio(const VoxForge::ApplicationSpecification& pSpec)
+		: VoxForge::Application(pSpec)
+	{
+	}
+};
 
-	VoxForge::ApplicationSpecification appSpec;
-	appSpec.Title = "VoxForge";
-	appSpec.WindowWidth = 1280;
-	appSpec.WindowHeight = 720;
+VoxForge::Application* VoxForge::CreateApplication(int argc, char** argv)
+{
+	VoxForge::ApplicationSpecification spec;
+	spec.Title = "Vox Studio";
+	spec.WindowWidth = 1280;
+	spec.WindowHeight = 720;
+	spec.VSync = true;
+	spec.FullScreen = false;
+	spec.Resizable = true;
 
-	auto app = VoxForge::Application::CreateApplication(appSpec);
-	app->Run();
-	
-	VoxForge::Log::Shutdown();
+	return new VoxStudio(spec);
 }
-
