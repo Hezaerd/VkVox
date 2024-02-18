@@ -1,5 +1,5 @@
 ﻿#include "vfpch.hpp"
-#include "Window.hpp"
+#include "VoxForge/Core/Window.hpp"
 
 namespace VoxForge
 {
