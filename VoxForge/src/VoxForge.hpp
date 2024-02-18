@@ -6,4 +6,4 @@
 #pragma once
 
 #include "VoxForge/Core/Core.hpp"
-#include "VoxForge/Core/Window.hpp"
+#include "VoxForge/Core/Application.hpp"
