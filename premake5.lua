@@ -4,7 +4,7 @@ include "Dependencies.lua"
 workspace "VoxForge"
     configurations { "Debug", "Release" }
     targetdir "build"
-    startproject "VoxForge-Studio"
+    startproject "VoxStudio"
     conformancemode "On"
 
     language "C++"
